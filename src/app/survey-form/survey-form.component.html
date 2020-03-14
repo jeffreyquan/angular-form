@@ -1,0 +1,10 @@
+<form class="form-group" [formGroup]="surveyForm" (ngSubmit)="onSubmit()"> 
+  <div *ngFor="let question of questions">
+    <app-question 
+      [question]="question" 
+      [formGroupName]="question.id"
+    >
+    </app-question>
+  </div>
+  <button class="btn btn-primary" type="submit">Submit</button>
+</form>

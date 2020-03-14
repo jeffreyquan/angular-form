@@ -1,0 +1,19 @@
+<div class="form-group text-center" [formGroup]="controlContainer.control">
+  <p>Question #{{ question.id }} {{ question.title }}</p>
+    <app-rating-input
+      [name]="'question' + question.id" 
+      [ratings]="question.ratings" 
+      formControlName="selectedRating"
+    >
+    </app-rating-input>
+    <textarea
+      *ngIf="question.requiredInput.includes(controlContainer.control.get('selectedRating').value)"
+      class="form-control"
+      name=""
+      id=""
+      cols="30"
+      rows="1"
+      (input)="autoSize($event)"
+      formControlName="ratingDescription"
+    ></textarea>
+</div>

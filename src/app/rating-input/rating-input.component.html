@@ -1,0 +1,20 @@
+<div
+  class="form-check form-check-inline mb-2"
+  *ngFor="let rating of ratings; let i = index"
+>
+  <label class="form-check-label" for="{{ name + '-' + rating.score }}">
+    <input
+      class="form-check-input"
+      [name]="name"
+      (click)="onTouched()"
+      (change)="change($event.target.value)"
+      type="radio"
+      id="{{ name + '-' + rating.score }}"
+      [value]="rating.score">
+    <img
+      class="smiley"
+      [class.selected]="selectedRating == rating.score"
+      src="{{ rating.image }}"
+      alt="{{ rating.description }}">
+  </label>
+</div>

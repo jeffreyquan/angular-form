@@ -1,0 +1,11 @@
+[type=radio] {
+  display: none;
+}
+
+.smiley {
+  max-width: 80px;
+}
+
+.selected {
+  max-width: 100px;
+}
